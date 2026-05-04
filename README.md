@@ -12,7 +12,7 @@
 
 | Tipo | Hex | Uso |
 |------|-----|-----|
-| Surface | #FFFFFF | Se usa en tarjetas, modales y campos de entrada para generar contraste con el fondo base. |
+| Surface | #F8FAFC| Se usa en tarjetas, modales y campos de entrada para generar contraste con el fondo base. |
 | Borders | #E0E6ED | Se utiliza en bordes y divisores, permitiendo separar componentes sin sobrecargar la interfaz. |
 | Primary Text | #2C3E50 | Es el color principal para títulos y contenido importante, ofreciendo alta legibilidad. |
 | Muted Text | #54616C | Se usa en subtítulos, etiquetas y textos secundarios para diferenciar niveles de información. |
