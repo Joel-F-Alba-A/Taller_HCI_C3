@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Web Clone</title>
+    <meta name="description" content="A WhatsApp Web UI Clone for demonstrative purposes.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <header class="sidebar-header" style="flex-direction: column; height: auto; padding: 15px; align-items: flex-start;">
+                <div style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 8px;">Simulando teléfono de:</div>
+                <div style="display: flex; align-items: center; width: 100%;">
+                    <div class="user-avatar" style="margin-right: 15px;">
+                        <img id="simulated-user-avatar" src="https://i.pravatar.cc/150?u=none" alt="Mi Perfil">
+                    </div>
+                    <select id="user-phone-selector" style="flex: 1; padding: 8px; border-radius: 4px; background: var(--search-bg); color: var(--text-primary); border: none; outline: none;">
+                        <!-- Populated dynamically -->
+                    </select>
+                </div>
+            </header>
+            
+            <div class="search-container">
+                <div class="search-input">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                    <input type="text" placeholder="Buscar un chat o iniciar uno nuevo" aria-label="Buscar chat">
+                </div>
+            </div>
+
+            <div class="chat-list" id="chat-list">
+                <!-- Chat Items -->
+                <div class="chat-item active" tabindex="0">
+                    <div class="chat-avatar">
+                        <img src="https://i.pravatar.cc/150?u=juancito" alt="Juan Pérez Avatar">
+                    </div>
+                    <div class="chat-info">
+                        <div class="chat-header-info">
+                            <h4>Juan Pérez</h4>
+                            <span class="time">10:45</span>
+                        </div>
+                        <div class="chat-message-preview">
+                            <i class="fas fa-check-double read" aria-hidden="true"></i>
+                            <p>¡Hola! ¿Cómo estás?</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chat-item" tabindex="0">
+                    <div class="chat-avatar">
+                        <img src="https://i.pravatar.cc/150?u=maria123" alt="María Gómez Avatar">
+                    </div>
+                    <div class="chat-info">
+                        <div class="chat-header-info">
+                            <h4>María Gómez</h4>
+                            <span class="time">Ayer</span>
+                        </div>
+                        <div class="chat-message-preview">
+                            <p>Nos vemos a las 5</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chat-item" tabindex="0">
+                    <div class="chat-avatar">
+                        <img src="https://i.pravatar.cc/150?u=grupo1" alt="Grupo Univ Avatar">
+                    </div>
+                    <div class="chat-info">
+                        <div class="chat-header-info">
+                            <h4>Grupo Universidad</h4>
+                            <span class="time">Ayer</span>
+                        </div>
+                        <div class="chat-message-preview">
+                            <p>Carlos: Listo, ya envié el archivo.</p>
+                            <span class="unread-badge">2</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chat-item" tabindex="0">
+                    <div class="chat-avatar">
+                        <img src="https://i.pravatar.cc/150?u=boss" alt="Jefe Avatar">
+                    </div>
+                    <div class="chat-info">
+                        <div class="chat-header-info">
+                            <h4>Jefe</h4>
+                            <span class="time">Marte</span>
+                        </div>
+                        <div class="chat-message-preview">
+                            <i class="fas fa-check" aria-hidden="true" style="color:var(--text-secondary);font-size:0.8rem;margin-right:5px;"></i>
+                            <p>Revisa el último correo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-area">
+            <header class="chat-area-header">
+                <div class="chat-area-profile">
+                    <div class="chat-avatar">
+                        <img src="https://i.pravatar.cc/150?u=juancito" alt="Avatar Contacto">
+                    </div>
+                    <div class="chat-area-info">
+                        <h3 id="current-chat-name">Juan Pérez</h3>
+                        <p id="current-chat-status">últ. vez hoy a las 10:50</p>
+                    </div>
+                </div>
+                <div class="chat-area-actions">
+                    <button aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i></button>
+                    <button aria-label="Menú del Chat"><i class="fas fa-ellipsis-v" aria-hidden="true"></i></button>
+                </div>
+            </header>
+
+            <div class="messages-container" id="messages-container">
+                <div class="message received">
+                    <p>Hola, ¿qué tal el proyecto?</p>
+                    <span class="message-time">10:40</span>
+                </div>
+                
+                <div class="message sent">
+                    <p>¡Todo bien! Ya estoy terminando la interfaz.</p>
+                    <span class="message-time">10:42 <i class="fas fa-check-double read" aria-hidden="true"></i></span>
+                </div>
+                
+                <div class="message received">
+                    <p>¡Hola! ¿Cómo estás?</p>
+                    <span class="message-time">10:45</span>
+                </div>
+            </div>
+
+            <footer class="chat-input-area">
+                <button aria-label="Emojis"><i class="far fa-smile" aria-hidden="true"></i></button>
+                <button aria-label="Adjuntar"><i class="fas fa-paperclip" aria-hidden="true"></i></button>
+                <input type="text" id="message-input" placeholder="Escribe un mensaje aquí" autocomplete="off">
+                <button id="send-button" aria-label="Enviar o grabar voz"><i class="fas fa-microphone" aria-hidden="true"></i></button>
+            </footer>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
